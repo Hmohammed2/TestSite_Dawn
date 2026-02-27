@@ -1,1 +1,118 @@
-{"sections":{"test_hero_TVR7xY":{"type":"test-hero","blocks":{"stat_766mzM":{"type":"stat","settings":{"value":"50K+","label":"Happy Customers"}},"stat_J6afGL":{"type":"stat","settings":{"value":"4.9*","label":"Average Rating"}},"stat_JN8atN":{"type":"stat","settings":{"value":"Free","label":"Shipping"}}},"block_order":["stat_766mzM","stat_J6afGL","stat_JN8atN"],"name":"Test Hero","settings":{"image_height":600,"image_width":850,"image_max_width":750,"badge":"✨ New: UV Protection Lenses","heading":"Crystal Clear Vision Starts Here","description":"Premium contact lenses delivered to your door. Find your perfect fit with our wide selection of daily, monthly, and colored lenses.","primary_button_text":"Shop Now","primary_button_link":"shopify:\/\/pages\/contact","secondary_button_text":"Take Vision Quiz","secondary_button_link":"","image":"shopify:\/\/shop_images\/neutral-brown-eye.jpg","approval_title":"FDA Approved","approval_subtitle":"All Products"}},"test_product_grid_Rwrm8E":{"type":"test-product-grid","name":"Test Product Grid","settings":{"heading":"Popular Products","description":"Discover our most loved products","collection":"contact-lens-collection","products_to_show":2}},"test_categories_CypgJe":{"type":"test-categories","blocks":{"category_Wmn4Dm":{"type":"category","settings":{"collection":"","description":"Daily Contacts","icon":"👁️","color":"blue"}},"category_graGBe":{"type":"category","settings":{"collection":"","description":"Monthly Lens","icon":"📅","color":"pink"}},"category_k96Ddm":{"type":"category","settings":{"collection":"contact-lens-collection","description":"Colored Lenses","icon":"🎨","color":"purple"}},"category_NKq9BP":{"type":"category","settings":{"collection":"","description":"Category description","icon":"👁️","color":"blue"}}},"block_order":["category_Wmn4Dm","category_graGBe","category_k96Ddm","category_NKq9BP"],"name":"Categories","settings":{"title":"Shop by Category","subtitle":"Find the perfect lenses for your lifestyle"}},"test_testimonials_MW4r8T":{"type":"test-testimonials","name":"Test Testimonials","settings":{"heading":"What Our Customers Say","subheading":"Join thousands of satisfied customers","testimonials":["the-colored-lenses-look-so-natural-i-love-being-able-to-change-my-eye-color-great-quality-and-amazing-prices-compared-to-other-sites","i-was-nervous-about-trying-contacts-but-their-customer-service-walked-me-through-everything-now-i-cant-imagine-going-back-to-glasses"]}}},"order":["test_hero_TVR7xY","test_product_grid_Rwrm8E","test_categories_CypgJe","test_testimonials_MW4r8T"]}
+{
+  "sections": {
+    "test_hero_TVR7xY": {
+      "type": "test-hero",
+      "blocks": {
+        "stat_766mzM": {
+          "type": "stat",
+          "settings": { "value": "50K+", "label": "Happy Customers" }
+        },
+        "stat_J6afGL": {
+          "type": "stat",
+          "settings": { "value": "4.9*", "label": "Average Rating" }
+        },
+        "stat_JN8atN": {
+          "type": "stat",
+          "settings": { "value": "Free", "label": "Shipping" }
+        }
+      },
+      "block_order": ["stat_766mzM", "stat_J6afGL", "stat_JN8atN"],
+      "name": "Test Hero",
+      "settings": {
+        "image_height": 600,
+        "image_width": 850,
+        "image_max_width": 750,
+        "badge": "✨ New: UV Protection Lenses",
+        "heading": "Crystal Clear Vision Starts Here",
+        "description": "Premium contact lenses delivered to your door. Find your perfect fit with our wide selection of daily, monthly, and colored lenses.",
+        "primary_button_text": "Shop Now",
+        "primary_button_link": "shopify:\/\/pages\/contact",
+        "secondary_button_text": "Take Vision Quiz",
+        "secondary_button_link": "",
+        "image": "shopify:\/\/shop_images\/neutral-brown-eye.jpg",
+        "approval_title": "FDA Approved",
+        "approval_subtitle": "All Products"
+      }
+    },
+    "test_product_grid_Rwrm8E": {
+      "type": "test-product-grid",
+      "name": "Test Product Grid",
+      "settings": {
+        "heading": "Popular Products",
+        "description": "Discover our most loved products",
+        "collection": "contact-lens-collection",
+        "products_to_show": 2
+      }
+    },
+    "test_categories_CypgJe": {
+      "type": "test-categories",
+      "blocks": {
+        "category_Wmn4Dm": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "description": "Daily Contacts",
+            "icon": "👁️",
+            "color": "blue"
+          }
+        },
+        "category_graGBe": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "description": "Monthly Lens",
+            "icon": "📅",
+            "color": "pink"
+          }
+        },
+        "category_k96Ddm": {
+          "type": "category",
+          "settings": {
+            "collection": "contact-lens-collection",
+            "description": "Colored Lenses",
+            "icon": "🎨",
+            "color": "purple"
+          }
+        },
+        "category_NKq9BP": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "description": "Category description",
+            "icon": "👁️",
+            "color": "blue"
+          }
+        }
+      },
+      "block_order": [
+        "category_Wmn4Dm",
+        "category_graGBe",
+        "category_k96Ddm",
+        "category_NKq9BP"
+      ],
+      "name": "Categories",
+      "settings": {
+        "title": "Shop by Category",
+        "subtitle": "Find the perfect lenses for your lifestyle"
+      }
+    },
+    "test_testimonials_MW4r8T": {
+      "type": "test-testimonials",
+      "name": "Test Testimonials",
+      "settings": {
+        "heading": "What Our Customers Say",
+        "subheading": "Join thousands of satisfied customers",
+        "testimonials": [
+          "the-colored-lenses-look-so-natural-i-love-being-able-to-change-my-eye-color-great-quality-and-amazing-prices-compared-to-other-sites",
+          "i-was-nervous-about-trying-contacts-but-their-customer-service-walked-me-through-everything-now-i-cant-imagine-going-back-to-glasses"
+        ]
+      }
+    }
+  },
+  "order": [
+    "test_hero_TVR7xY",
+    "test_product_grid_Rwrm8E",
+    "test_categories_CypgJe",
+    "test_testimonials_MW4r8T"
+  ]
+}

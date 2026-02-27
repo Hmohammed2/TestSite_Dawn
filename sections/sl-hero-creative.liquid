@@ -1,0 +1,114 @@
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-blue-950">
+
+  <!-- Gradient background layer -->
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-blue-950 to-orange-900/20"></div>
+
+  <!-- Grid overlay -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f10_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+    <div class="animate-fade-up">
+
+      <h1 class="text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold tracking-tight bg-gradient-to-r from-blue-400 via-white to-orange-400 bg-clip-text text-transparent">
+        {{ section.settings.heading }}
+      </h1>
+
+      {% if section.settings.subheading != blank %}
+        <p class="text-xl md:text-2xl text-gray-300 mb-4">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.description != blank %}
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex gap-4 justify-center flex-wrap">
+
+      {% if section.settings.primary_label != blank and section.settings.primary_link != blank %}
+        <a href="{{ section.settings.primary_link }}"
+           class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200">
+          ▶
+          {{ section.settings.primary_label }}
+        </a>
+      {% endif %}
+
+      {% if section.settings.secondary_label != blank and section.settings.secondary_link != blank %}
+        <a href="{{ section.settings.secondary_link }}"
+           class="inline-flex items-center border border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200">
+          {{ section.settings.secondary_label }}
+        </a>
+      {% endif %}
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+      <div class="animate-bounce text-gray-400">
+        ↓
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "SL Creative Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Video Editor"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Crafting Visual Stories"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Transforming raw footage into compelling narratives through creative editing, color grading, and motion graphics."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary Button Label",
+      "default": "View My Work"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary Button Label",
+      "default": "Get In Touch"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "SL Creative Hero"
+    }
+  ]
+}
+{% endschema %}
