@@ -20,15 +20,6 @@
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
-       {% if section.settings.enable_read_more %}
-      <button
-        type="button"
-        class="collection-read-more"
-        aria-expanded="false"
-      >
-        Read more
-      </button>
-    {% endif %}
     </div>
 
     {%- if section.settings.show_collection_image and collection.image -%}
