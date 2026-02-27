@@ -1,0 +1,123 @@
+{{ 'test-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="test-testimonials">
+
+  <div class="test-testimonials__container">
+
+    <!-- Header -->
+    <div class="test-testimonials__header">
+
+      <h2 class="test-testimonials__heading">
+        {{ section.settings.heading | default: "What Our Customers Say" }}
+      </h2>
+
+      <p class="test-testimonials__subheading">
+        {{ section.settings.subheading }}
+      </p>
+
+    </div>
+
+
+    <!-- Grid -->
+    <div class="test-testimonials__grid">
+
+    {% assign testimonials = section.settings.testimonials %}
+
+    {% if testimonials != blank %}
+
+        {% for testimonial in testimonials %}
+
+            <div class="test-testimonial-card">
+
+            <!-- Stars -->
+            <div class="test-testimonial-card__stars">
+
+                {% assign star = testimonial.star.value | plus: 0 %}
+
+                {% for i in (1..star) %}
+                    <span class="test-testimonial-card__star">★</span>
+                {% endfor %}
+
+            </div>
+
+
+            <!-- Content -->
+            <div class="test-testimonial-card__content">
+                "{{ testimonial.content.value }}"
+            </div>
+
+
+            <!-- Author -->
+            <div class="test-testimonial-card__author">
+
+                <div class="test-testimonial-card__avatar">
+
+                {% if testimonial.avatar.value %}
+                    {{ testimonial.avatar.value | image_url: width: 80 | image_tag }}
+                {% endif %}
+
+                </div>
+
+                <div>
+
+                <div class="test-testimonial-card__name">
+                    {{ testimonial.name.value }}
+                </div>
+
+                <div class="test-testimonial-card__role">
+                    {{ testimonial.role.value }}
+                </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        {% endfor %}
+    
+    {% else %}
+        <p>No testimonials selected yet.</p>
+    {% endif %}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Test Testimonials",
+
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Our Customers Say"
+    },
+
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Join thousands of satisfied customers"
+    },
+     {
+      "type": "metaobject_list",
+      "id": "testimonials",
+      "label": "Testimonials",
+      "metaobject_type": "testimonials"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "Test Testimonials"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,157 @@
+{{ 'test-product-grid.css' | asset_url | stylesheet_tag }}
+
+<section class="test-product-grid">
+
+  <div class="test-product-grid__container">
+
+    <!-- Header -->
+    <div class="test-product-grid__header">
+
+      <h2 class="test-product-grid__heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      <p class="test-product-grid__description">
+        {{ section.settings.description }}
+      </p>
+
+    </div>
+
+
+    <!-- Grid -->
+    <div class="test-product-grid__grid">
+
+      {% assign collection = collections[section.settings.collection] %}
+
+      {% for product in collection.products limit: section.settings.products_to_show %}
+
+        <div class="test-product-card">
+
+          <div class="test-product-card__image-wrapper">
+
+            {% if product.compare_at_price > product.price %}
+              <div class="test-product-card__badge">
+                Sale
+              </div>
+            {% endif %}
+
+            {{
+              product.featured_image
+              | image_url: width: 600
+              | image_tag:
+                class: 'test-product-card__image',
+                loading: 'lazy'
+            }}
+
+          </div>
+
+
+          <div class="test-product-card__content">
+
+            <div class="test-product-card__type">
+              {{ product.type }}
+            </div>
+
+            <div class="test-product-card__title">
+              {{ product.title }}
+            </div>
+
+
+            <div class="test-product-card__price-row">
+
+              <div>
+                <span class="test-product-card__price">
+                  {{ product.price | money }}
+                </span>
+
+                {% if product.compare_at_price > product.price %}
+                  <span class="test-product-card__compare">
+                    {{ product.compare_at_price | money }}
+                  </span>
+                {% endif %}
+              </div>
+
+            </div>
+
+
+            <form method="post" action="cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+
+              <button
+                type="submit"
+                class="test-product-card__button"
+              >
+                Add to Cart
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+
+    <!-- View all -->
+    <div class="test-product-grid__footer">
+
+      <a
+        href="{{ collection.url }}"
+        class="test-product-grid__view-all"
+      >
+        View All Products
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Test Product Grid",
+  "settings": [
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Popular Products"
+    },
+
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover our most loved products"
+    },
+
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    }
+
+  ],
+
+  "presets": [
+    {
+      "name": "Test Product Grid"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,123 @@
+{{ 'test-categories.css' | asset_url | stylesheet_tag }}
+
+<section class="categories">
+  <div class="container">
+
+    <div class="categories-header">
+      <h2 class="categories-title">
+        {{ section.settings.title }}
+      </h2>
+
+      <p class="categories-subtitle">
+        {{ section.settings.subtitle }}
+      </p>
+    </div>
+
+    <div class="categories-grid">
+
+      {% for block in section.blocks %}
+        
+        {% assign collection = block.settings.collection %}
+
+        <a href="{{ collection.url }}" class="category-card category-{{ block.settings.color }}">
+
+          <div class="category-content">
+
+            {% if block.settings.icon != blank %}
+              <div class="category-icon">
+                {{ block.settings.icon }}
+              </div>
+            {% endif %}
+
+            <h3 class="category-name">
+              {{ collection.title }}
+            </h3>
+
+            <p class="category-description">
+              {{ block.settings.description }}
+            </p>
+
+            <div class="category-link">
+              Shop Now →
+            </div>
+
+          </div>
+
+        </a>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Shop by Category",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "Find the perfect lenses for your lifestyle",
+      "label": "Subtitle"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Category description"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon",
+          "default": "👁️"
+        },
+        {
+          "type": "select",
+          "id": "color",
+          "label": "Color",
+          "default": "blue",
+          "options": [
+            { "value": "blue", "label": "Blue" },
+            { "value": "purple", "label": "Purple" },
+            { "value": "pink", "label": "Pink" },
+            { "value": "green", "label": "Green" }
+          ]
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Categories",
+      "blocks": [
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
